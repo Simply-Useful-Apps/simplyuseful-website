@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_TITLE, SITE_AUTHOR, SITE_EMAIL } from '../consts';
+---
+
+<Layout
+  title={`Privacy Policy — ${SITE_TITLE}`}
+  description="Privacy policy for Simply Useful Apps and the Galerie app."
+>
+  <section class="policy">
+    <h1>Privacy Policy</h1>
+    <p class="meta">
+      Applies to: Galerie for iOS<br />
+      Effective date: April 1, 2026<br />
+      Published by: {SITE_AUTHOR}
+    </p>
+
+    <p>
+      Galerie is designed to be simple and private. This policy describes what
+      data the app accesses and how it is used. The short version: your photos
+      stay on your device, and no personal data is collected or transmitted.
+    </p>
+
+    <h2>Photo Library</h2>
+    <p>
+      Galerie requests read-only access to your photo library in order to
+      display your photos as a slideshow. The app does not upload, transmit,
+      modify, or share your photos or any information derived from them. All
+      access occurs entirely on your device.
+    </p>
+
+    <h2>Data We Collect</h2>
+    <p>
+      Galerie does not collect any personal information. No account is required
+      to use the app. No usage data, device identifiers, or analytics are
+      gathered or transmitted.
+    </p>
+
+    <h2>Third-Party Services</h2>
+    <p>
+      Galerie does not include any third-party analytics, advertising, or
+      tracking frameworks.
+    </p>
+    <p>
+      In-app purchases are processed by Apple through the App Store. We do not
+      receive or store any payment information. Apple's privacy policy governs
+      that transaction and can be found at
+      <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">
+        apple.com/legal/privacy
+      </a>.
+    </p>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Galerie does not collect information from anyone, including children
+      under the age of 13.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If this policy changes, the updated version will be posted on this page
+      with a revised effective date. We encourage you to review it periodically.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this privacy policy can be sent to{' '}
+      <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .policy {
+    max-width: 42rem;
+  }
+
+  .policy h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .meta {
+    font-size: 0.875rem;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .policy h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .policy a {
+    text-decoration: underline;
+  }
+</style>

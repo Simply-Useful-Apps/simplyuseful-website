@@ -1,21 +1,109 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import {
+	SITE_TITLE,
+	SITE_DESCRIPTION,
+	SITE_AUTHOR,
+	SITE_EMAIL,
+} from "../consts";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title="About" description="This is the about page of the Ataraxia Astro Theme." />
-	</head>
-	<body>
-		<Header/>
-		<main id="main">
-			<h1>About</h1>
-			<p>This is the about page of the <strong>Ataraxia Astro Theme</strong>. You can customize this page to include information about yourself or your website.</p>
-			<p>Feel free to modify the content and style to suit your needs!</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title={`About — ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+	<section class="about">
+		<h1>About {SITE_TITLE}</h1>
+
+		<p class="intro">
+			{SITE_AUTHOR} is an independent development team based in the United States.
+			We build small, focused apps that do exactly what they promise — nothing
+			more, nothing less.
+		</p>
+
+		<h2>Our Philosophy</h2>
+		<p>
+			The App Store is full of apps that are free to download but
+			expensive to actually use — padded with subscriptions, ads, nagging
+			notifications, and tracking you didn't ask for. {SITE_TITLE} exists as
+			a reaction to that. Every app we build is guided by a simple set of principles:
+		</p>
+
+		<ul class="principles">
+			<li>
+				<strong>Do one thing well.</strong> A focused app that solves a real
+				problem beats a bloated app that tries to do everything.
+			</li>
+			<li>
+				<strong>Respect your privacy.</strong> Your data belongs to you. Our
+				apps don't track you, don't profile you, and don't phone home. What
+				happens on your device stays on your device.
+			</li>
+			<li>
+				<strong>No subscriptions for simple things.</strong> If an app doesn't
+				cost us money to run, it shouldn't cost you money every month to use.
+				We prefer one-time purchases and free tiers instead of needless recurring
+				fees.
+			</li>
+			<li>
+				<strong>No dark patterns.</strong> No manipulative review prompts,
+				no artificial feature restrictions designed to upsell, no notification
+				spam. Just an app that works.
+			</li>
+			<li class="closing">
+				In short — apps you'd be comfortable recommending to your
+				parents. Genuinely easy to use, honestly priced, and designed
+				for real people, not for extracting maximum revenue from them.
+			</li>
+		</ul>
+
+		<h2>Get in Touch</h2>
+		<p>
+			Questions, feedback, or just want to say hello — reach us at{" "}
+			<a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
+		</p>
+	</section>
+</Layout>
+
+<style>
+	.about {
+		max-width: 42rem;
+	}
+
+	.about h1 {
+		margin-bottom: 0.75rem;
+	}
+
+	.intro {
+		font-size: 1.1rem;
+		opacity: 0.85;
+		margin-bottom: 2rem;
+	}
+
+	.about h2 {
+		margin-top: 2.5rem;
+		margin-bottom: 0.75rem;
+		font-size: 1.1rem;
+	}
+
+	.about a {
+		text-decoration: underline;
+	}
+
+	.principles {
+		list-style: none;
+		padding: 0;
+		margin: 1.25rem 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.principles li {
+		padding-left: 1rem;
+		border-left: 3px solid var(--accent, #4f46e5);
+	}
+
+	.principles li.closing {
+		border-left-color: transparent;
+		opacity: 0.75;
+		font-style: italic;
+	}
+</style>

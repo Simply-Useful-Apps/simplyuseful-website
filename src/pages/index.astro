@@ -1,41 +1,116 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from '../layouts/Layout.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main id="main">
-			<h1>👋 Hello, human!</h1>
-			<p>My name is <strong><a href="https://github.com/inakicalvo" target="_blank" rel="noopener noreferrer">Iñaki Calvo</a></strong> and I'm a techie with a Bachelor's Degree in Philosophy; that's why I named this Astro theme "Ataraxia" after the philosophical concept — learn more on <a href="https://en.wikipedia.org/wiki/Ataraxia" target="_blank" rel="noopener noreferrer">Wikipedia</a>.</p>
-			<p>
-				<strong>Ataraxia</strong> is an accessible, lightweight <a href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a> theme designed to showcase your writing. Built on the Official Astro Blog Starter, it includes:
-			</p>
-			<ul>
-				<li>✅ <strong>Astro v6</strong> - Built with the latest Astro features</li>
-				<li>✅ <strong>Dark Mode</strong> - Toggle between light and dark themes</li>
-				<li>✅ <strong>Tag System</strong> - Organize posts by tags with dedicated tag pages</li>
-				<li>✅ <strong>Responsive Design</strong> - Mobile-first with hamburger navigation</li>
-				<li>✅ <strong>Content Collections</strong> - Type-safe blog posts with Zod validation</li>
-				<li>✅ <strong>SEO Optimized</strong> - Canonical URLs, OpenGraph data, and sitemap</li>
-				<li>✅ <strong>RSS Feed</strong> - Auto-generated RSS feed for subscribers</li>
-				<li>✅ <strong>MDX Support</strong> - Enhanced markdown with component support</li>
-				<li>✅ <strong>Breadcrumb Navigation</strong> - Clear navigation paths</li>
-				<li>✅ <strong>Performance</strong> - Optimized images with Sharp</li>
-				<li>✅ <strong>Minimal Styling</strong> - Clean design based on Astro Starter Kit: Blog</li>
-				<li>✅ <strong>Atkinson Hyperlegible Fonts</strong> - Local variable fonts optimized for readability</li>
-				<li>✅ <strong>Accessible</strong> - WCAG 2.2 AA compliant with keyboard navigation and screen reader support</li>
-			</ul>
+<Layout title={SITE_TITLE} description="Simple, privacy-respecting iOS apps designed to be genuinely useful.">
 
-			<p>I started building this theme for my personal blog but it's now open source. Customize it, make it yours, and start sharing your ideas with the world. Happy blogging! ✨</p>
-			</main>
-		<Footer />
-	</body>
-</html>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Apps that do exactly what they say.</h1>
+    <p class="tagline">
+      Simply Useful Apps builds focused iOS apps — no subscriptions, no tracking,
+      no clutter. Just tools that work.
+    </p>
+  </section>
+
+  <!-- Featured App -->
+  <h2>Our Apps</h2>
+  <section class="app-card">
+	<h3><span aria-hidden="true">🖼️</span> Galerie</h3>
+    <p class="app-subtitle">A simple and useful digital photo frame for your iPhone and iPad.</p>
+    <p>
+      Turn your device into a living photo frame. Galerie displays your photo library
+      as a smooth, elegant slideshow — perfect for a nightstand, desk, or anywhere
+      you want your memories on display.
+    </p>
+    <div class="badge-area">
+      <span class="coming-soon">Coming soon to the App Store</span>
+      <!-- When live, replace the line above with:
+      <a href="YOUR_APP_STORE_LINK">
+        <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="160" />
+      </a>
+      -->
+    </div>
+  </section>
+
+  <!-- Privacy Trust Statement -->
+  <section class="trust">
+    <h2><span aria-hidden="true">🔒</span> Privacy by default</h2>
+    <p>
+      Our apps don't collect your personal data, don't run ads, and don't require an
+      account. What happens on your device stays on your device.
+    </p>
+    <a href="/privacy-policy">Privacy Policy →</a>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    padding: 3rem 0 2rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+    max-width: 38rem;
+    margin: 0 auto;
+    opacity: 0.8;
+  }
+
+  .app-card {
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .app-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .app-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.75;
+    margin-bottom: 1rem;
+  }
+
+  .badge-area {
+    margin-top: 1.5rem;
+  }
+
+  .coming-soon {
+    display: inline-block;
+    background: var(--accent, #4f46e5);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .trust {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border, #e2e8f0);
+    margin-top: 1rem;
+  }
+
+  .trust h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .trust a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+</style>

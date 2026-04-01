@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_TITLE, SITE_AUTHOR, SITE_EMAIL } from '../consts';
+---
+
+<Layout
+  title={`Support — ${SITE_TITLE}`}
+  description="Get help with Galerie and other Simply Useful Apps."
+>
+  <section class="support">
+    <h1>Support</h1>
+    <p>
+      Need help with Galerie or have a question? We're happy to help.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Why isn't Galerie showing all of my photos?</h3>
+        <p>
+          Galerie requires access to your photo library to display photos. Go to
+          Settings → Privacy & Security → Photos → Galerie and make sure access
+          is set to <strong>All Photos</strong>.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I manage my Galerie purchase?</h3>
+        <p>
+          Purchases are managed through your Apple ID. To view or manage them,
+          open the App Store, tap your profile picture, then tap
+          <strong>Subscriptions</strong> or <strong>Purchases</strong>.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I request a refund?</h3>
+        <p>
+          Refunds are handled by Apple. Visit{' '}
+          <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">
+            reportaproblem.apple.com
+          </a>{' '}
+          to submit a refund request.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>I found a bug. How do I report it?</h3>
+        <p>
+          Please email us at <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a> with
+          a description of what happened and what you expected to happen. If you
+          can include your iOS version and device model that helps a lot.
+        </p>
+      </div>
+    </div>
+
+    <h2>Contact Us</h2>
+    <p>
+      Email us at <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a> and
+      we'll get back to you as soon as we can.
+    </p>
+
+  </section>
+</Layout>
+
+<style>
+  .support {
+    max-width: 42rem;
+  }
+
+  .support h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .support h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .support a {
+    text-decoration: underline;
+  }
+
+  .faq {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .faq-item {
+    border-left: 3px solid var(--accent, #4f46e5);
+    padding-left: 1rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .faq-item p {
+    margin: 0;
+    opacity: 0.85;
+  }
+</style>
